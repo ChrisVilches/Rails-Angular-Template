@@ -5,7 +5,7 @@
 
 ## Database
 
-Implements three tables
+It implements three tables:
 
 1. Course 
 2. Student (N:N with ```course```)
