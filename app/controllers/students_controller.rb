@@ -13,23 +13,29 @@ class StudentsController < ApplicationController
 
 	def create
 		student = Student.new(student_params)
-		student.save
-		render nothing: true	
+
+		# Handle format error
+		if student.save
+			render json: student, status: :ok
+		else
+			render json: student, status: :unprocessable_entity
+		end
 	end
 
 	def update
 		# Add to courses_students
-		if params[:course_id] && params[:id]
+		if params[:course_id]
 			course = Course.find(params[:course_id])
 			student = Student.find(params[:id])
 			student.courses<<(course)
+			render json:  student, status: :ok
 			
 		# Update student itself
 		else
 			student = Student.find(params[:id])
 			student.update(student_params)
-		end
-		render nothing: true
+			render json:  student, status: :ok
+		end		
 	end
 
 
@@ -45,7 +51,7 @@ class StudentsController < ApplicationController
 		# Delete this student
 			student.destroy
 		end
-		render nothing: true  	
+		render json: student, status: :ok
 	end
 
 	private

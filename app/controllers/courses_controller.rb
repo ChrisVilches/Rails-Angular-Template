@@ -7,14 +7,17 @@ class CoursesController < ApplicationController
 
 	def create
 		course = Course.new(course_params)
-		course.save
-		render nothing: true
+		if course.save
+			render json: course, status: :ok
+		else
+			render json: course, status: :unprocessable_entity
+		end
 	end
 
 	def destroy
 		course = Course.find(params[:id])
 		course.destroy
-		render nothing: true  		 		
+		render json: course, status: :ok		 		
 	end
 
 	private
