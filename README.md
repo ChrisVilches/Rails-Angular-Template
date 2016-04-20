@@ -17,6 +17,12 @@ In order to get all students that belong to a course, do:
 GET http://localhost:3000/courses/{course_id}/students
 ```
 
+Add a student to a course
+
+```
+PUT http://localhost:3000/courses/{course_id}/students/{student_id}
+```
+
 Or delete a student from a course:
 
 ```

@@ -1,7 +1,8 @@
+<h2>Courses</h2>
 <ul>
 	<li ng-repeat="course in courses">
 		<a href="javascript:;" ng-click="showStudents(course)">
-			{{ course.name }}
+			{{ course.id }} {{ course.name }}
 		</a>
 	</li>
 </ul>
@@ -21,14 +22,21 @@
 		</b>
 	</p>
 
-	<p ng-show="students.length == 0">
+	<p ng-show="courseStudents.length == 0">
 		No hay alumnos que mostrar
 	</p>
 
 	<ul>
-		<li ng-repeat="student in students">
-			{{ student.name }} {{ student.surname }}
+		<li ng-repeat="student in courseStudents">
+			{{ student.id }} {{ student.name }} {{ student.surname }}
 		</li>
 	</ul>
-
 </div>
+
+
+<h2>Students</h2>
+<ul>
+	<li ng-repeat="student in students">
+			{{ student.id }} {{ student.name }} {{ student.surname }}
+	</li>
+</ul>

@@ -7,7 +7,7 @@ angular.module('myApp').controller('HomeCtrl', function($scope, $http){
 	$scope.showStudents = function(course){
 		$scope.courseMostrando = course;
 		$http.get("courses/"+$scope.courseMostrando.id+"/students").success(function(result){
-			$scope.students = result;
+			$scope.courseStudents = result;
 		});
 	}
 
@@ -15,5 +15,9 @@ angular.module('myApp').controller('HomeCtrl', function($scope, $http){
 
 	$http.get("courses").success(function(result){
 		$scope.courses = result;
+	});
+
+	$http.get("students").success(function(result){
+		$scope.students = result;
 	});
 });
