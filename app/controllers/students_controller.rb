@@ -3,8 +3,9 @@ class StudentsController < ApplicationController
 
 	def index
 		# List all students that belong to a course
-		if params[:course_id]			
-			render :json => Student.joins(:courses).where(courses_students: {course_id: params[:course_id]}).references(:courses)
+		if params[:course_id]
+			course = Course.find(params[:course_id])		
+			render :json => course.students
 		else
 		# List all students
 			render :json => Student.all
