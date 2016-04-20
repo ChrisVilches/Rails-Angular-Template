@@ -1,3 +1,7 @@
+(function(){
+	console.log("Se carga la pagina por primera vez");
+})();
+
 angular.module('myApp', ['ui.router', 'templates'])
 .config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	$stateProvider
@@ -14,5 +18,5 @@ angular.module('myApp', ['ui.router', 'templates'])
 
 	$urlRouterProvider.otherwise('/');
 
-	//$locationProvider.html5Mode(true);
+	$locationProvider.html5Mode(true);
 });

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # This is for Rails templates (for Angular) to work
   get '*path' => 'landing#index'
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
