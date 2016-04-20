@@ -22,3 +22,10 @@ Or delete a student from a course:
 ```
 DELETE http://localhost:3000/courses/{course_id}/students/{student_id}
 ```
+
+## Installation
+
+```bash
+$ rake db:migrate
+$ rake db:seed
+```
