@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+
+
+  resources :students
+  resources :homeworks
+  
+  # Enable /courses/{course_id}/students
+  resources :courses do
+    resources :students
+  end
+
   root 'landing#index'
 
   # This is for Rails templates (for Angular) to work
