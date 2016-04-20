@@ -1,6 +1,6 @@
 # Rails & Angular Template
 
-1. Angular UI-Router (sin # para las URLs)
+1. Angular UI-Router (without using #)
 2. Simple Bootstrap template
 
 ## Database
