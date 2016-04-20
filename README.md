@@ -26,6 +26,7 @@ DELETE http://localhost:3000/courses/{course_id}/students/{student_id}
 ## Installation
 
 ```bash
+$ bundle install
 $ rake db:migrate
 $ rake db:seed
 ```
