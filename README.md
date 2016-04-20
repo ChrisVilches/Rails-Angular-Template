@@ -2,6 +2,7 @@
 
 1. Angular UI-Router (without using #)
 2. Simple Bootstrap template
+3. Compiles Typescript automatically
 
 ## Database
 
